@@ -26,6 +26,14 @@ export class ApiConfigService {
     return this.configService.get<boolean>('features.guestCaching.enabled') ?? false;
   }
 
+  getFaucetPassword(): string {
+    return this.configService.get<string>('FAUCET_PASSWORD') ?? '';
+  }
+
+  getChainId(): string {
+    return this.configService.get<string>('chainId') ?? '';
+  }
+
   getGuestCacheHitsThreshold(): number {
     return this.configService.get<number>('features.guestCaching.hitsThreshold') ?? 100;
   }
